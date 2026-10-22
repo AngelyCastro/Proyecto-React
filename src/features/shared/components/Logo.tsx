@@ -1,10 +1,10 @@
+import "../styles/Logo.css"
+
 const Logo = () => {
   return (
     <div className="logo">
-      <span className="logo-incon">A</span>
-      <span className="logo_text">
-        AMAVAL
-      </span>
+      <span className="logo__icon">A</span>
+      <span className="logo__text">AMAVAL</span>
     </div>
   )
 }

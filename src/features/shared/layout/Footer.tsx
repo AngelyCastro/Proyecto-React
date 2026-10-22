@@ -21,10 +21,7 @@ const Footer = () => {
       <div className="container footer__grid">
         <div className="footer__about">
           <Logo />
-          <p>
-            Apartamentos de lujo seleccionados para quienes buscan diseño,
-            comodidad y la mejor ubicación.
-          </p>
+          <p>Residencias de lujo en las mejores ubicaciones de Costa Rica.</p>
         </div>
 
         <nav className="footer__nav" aria-label="Enlaces del pie de página">

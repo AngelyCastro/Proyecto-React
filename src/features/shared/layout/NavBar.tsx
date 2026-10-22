@@ -21,12 +21,12 @@ const NavBar = () => {
   const closeMenu = () => setIsOpen(false)
 
   return (
-
     <header className="navbar">
       <div className="container navbar__inner">
-        <NavLink to="/"
+        <NavLink
+          to="/"
           className="navbar__brand"
-          aria-label="AMAVAL— Inicio"
+          aria-label="AMAVAL — Inicio"
           onClick={closeMenu}
         >
           <Logo />
@@ -40,9 +40,7 @@ const NavBar = () => {
           aria-controls="menu-principal"
           onClick={toggleMenu}
         >
-          <span className="navbar__toggle-bar" />
-          <span className="navbar__toggle-bar" />
-          <span className="navbar__toggle-bar" />
+          {isOpen ? "✕" : "☰"}
         </button>
 
         <nav
@@ -62,9 +60,6 @@ const NavBar = () => {
             </NavLink>
           ))}
         </nav>
-
-
-
       </div>
     </header>
   )
