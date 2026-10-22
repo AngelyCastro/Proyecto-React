@@ -1,6 +1,11 @@
 const Logo = () => {
   return (
-    <div>Logo</div>
+    <div className="logo">
+      <span className="logo-incon">A</span>
+      <span className="logo_text">
+        AMAVAL
+      </span>
+    </div>
   )
 }
 
