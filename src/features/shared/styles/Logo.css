@@ -4,19 +4,11 @@
   gap: 0.5rem;
 }
 
-/* Círculo con la letra A */
+/* Imagen del logo */
 .logo__icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
+  width: auto;
   height: 40px;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  color: var(--color-accent);
-  font-family: var(--font-title);
-  font-size: 1.4rem;
-  font-weight: 700;
+  border-radius: 6px;
 }
 
 .logo__text {

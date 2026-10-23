@@ -3,8 +3,8 @@ import "../styles/Logo.css"
 const Logo = () => {
   return (
     <div className="logo">
-      <span className="logo__icon">A</span>
-      <span className="logo__text">AMAVAL</span>
+      <img className="logo__icon" src="/images/logo.png" alt="" />
+      <span className="logo__text">AMAREA</span>
     </div>
   )
 }
