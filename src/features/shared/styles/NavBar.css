@@ -1,0 +1,70 @@
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(8, 58, 79, 0.08);
+  padding: 1rem 0;
+}
+
+/* Móvil: logo y botón en la misma fila, links debajo */
+.navbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Botón para abrir y cerrar el menú */
+.navbar__toggle {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Móvil: links ocultos hasta abrir el menú */
+.navbar__links {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+/* Clase que se agrega cuando isOpen es true */
+.navbar__links--open {
+  display: flex;
+}
+
+.navbar__links a {
+  color: var(--color-primary);
+  font-weight: 500;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.navbar__links a:hover {
+  color: var(--color-secondary);
+}
+
+/* Clase que agrega NavLink a la página actual */
+.navbar__links a.active {
+  color: var(--color-secondary);
+  border-bottom-color: var(--color-secondary);
+}
+
+/* Tablet y desktop: todo en una fila, sin botón */
+@media (min-width: 768px) {
+  .navbar__toggle {
+    display: none;
+  }
+
+  .navbar__links {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 2rem;
+    padding-top: 0;
+  }
+}

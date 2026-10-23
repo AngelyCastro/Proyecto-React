@@ -1,0 +1,54 @@
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-soft);
+  padding: 3rem 0 1.5rem;
+}
+
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer__about {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer .logo__text {
+  color: #ffffff;
+}
+
+
+.footer h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer__nav a {
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer__nav a:hover {
+  color: var(--color-accent);
+}
+
+.footer__copyright {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* Tablet y desktop: tres columnas, la primera más ancha */
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
