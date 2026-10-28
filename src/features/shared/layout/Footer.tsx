@@ -7,6 +7,7 @@ interface FooterLink {
   label: string
 }
 
+// Lista de enlaces que se mostrarán en el pie de página
 const FOOTER_LINKS: FooterLink[] = [
   { to: "/apartamentos", label: "Apartamentos" },
   { to: "/favoritos", label: "Favoritos" },
@@ -14,7 +15,7 @@ const FOOTER_LINKS: FooterLink[] = [
 ]
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear() 
 
   return (
     <footer className="footer">
@@ -26,6 +27,7 @@ const Footer = () => {
 
         <nav className="footer__nav" aria-label="Enlaces del pie de página">
           <h3>Explorar</h3>
+          // Recorre la lista FOOTER_LINKS para generar los enlaces
           {FOOTER_LINKS.map((link) => (
             <Link key={link.to} to={link.to}>
               {link.label}
@@ -42,7 +44,7 @@ const Footer = () => {
       </div>
 
       <p className="container footer__copyright">
-        © {currentYear} AMAREA 
+        © {currentYear} AMAREA - Todos los derechos reservados
       </p>
     </footer>
   )

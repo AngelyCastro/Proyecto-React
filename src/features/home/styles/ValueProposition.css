@@ -1,11 +1,10 @@
-/* Franja navy, como la inspiración */
 .value {
   background-color: var(--color-light);
   color: var(--color-light);
   padding: 4rem 0;
 }
 
-/* Encabezado centrado */
+
 .value__header {
   display: flex;
   flex-direction: column;
@@ -16,14 +15,14 @@
   text-align: center;
 }
 
-/* El h2 global es navy: aquí se cambia a blanco */
+
 .value__title {
   color: var(--color-primary);
   font-size: 2rem;
   font-weight: 500;
 }
 
-/* Móvil: una ventaja debajo de otra, separadas por una línea dorada */
+
 .value__list {
   list-style: none;
   display: grid;
@@ -38,7 +37,7 @@
   border-top: 1px solid rgba(165, 141, 102, 0.4);
 }
 
-/* La primera no lleva línea arriba */
+
 .value__item:first-child {
   border-top: none;
 }
@@ -63,7 +62,7 @@
   font-size: 0.95rem;
 }
 
-/* Tablet: dos columnas, sin líneas */
+/* Tablet */
 @media (min-width: 768px) {
   .value {
     padding: 6rem 0;
@@ -84,7 +83,7 @@
   }
 }
 
-/* Desktop: cuatro columnas con línea dorada vertical entre cada una */
+/* Desktop */
 @media (min-width: 1024px) {
   .value__list {
     grid-template-columns: repeat(4, 1fr);

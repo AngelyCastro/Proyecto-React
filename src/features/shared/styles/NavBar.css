@@ -4,7 +4,7 @@
   padding: 1rem 0;
 }
 
-/* Móvil: logo y botón en la misma fila, links debajo */
+/* Celular*/
 .navbar__inner {
   display: flex;
   justify-content: space-between;
@@ -12,7 +12,7 @@
   flex-wrap: wrap;
 }
 
-/* Botón para abrir y cerrar el menú */
+
 .navbar__toggle {
   background: none;
   border: none;
@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 
-/* Móvil: links ocultos hasta abrir el menú */
+
 .navbar__links {
   display: none;
   flex-direction: column;
@@ -31,7 +31,7 @@
   padding-top: 1rem;
 }
 
-/* Clase que se agrega cuando isOpen es true */
+
 .navbar__links--open {
   display: flex;
 }
@@ -48,13 +48,13 @@
   color: var(--color-secondary);
 }
 
-/* Clase que agrega NavLink a la página actual */
+
 .navbar__links a.active {
   color: var(--color-secondary);
   border-bottom-color: var(--color-secondary);
 }
 
-/* Tablet y desktop: todo en una fila, sin botón */
+/* Tablet y desktop*/
 @media (min-width: 768px) {
   .navbar__toggle {
     display: none;

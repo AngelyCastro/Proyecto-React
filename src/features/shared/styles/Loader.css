@@ -28,7 +28,7 @@
   }
 }
 
-/* Accesibilidad: sin animación para quien lo prefiera */
+/* Accesibilidad */
 @media (prefers-reduced-motion: reduce) {
   .loader__spinner {
     animation: none;
