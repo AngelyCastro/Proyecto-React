@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import type { Apartment } from "../types/Apartment"
 import "../styles/ApartmentCard.css"
+import FavoriteButton from "../../favorites/components/FavoriteButton";
 
 interface ApartmentCardProps {
   apartment: Apartment;
@@ -19,7 +20,7 @@ const ApartmentCard = ({ apartment }: ApartmentCardProps) => {
 
         <span className="apartment-card__badge">{apartment.location}</span>
 
-        {/* Mandy aqui se pone el <FavoriteButton apartmentId={apartment.id} /> */}
+        <FavoriteButton apartmentId={apartment.id} apartmentName={apartment.name} />
       </div>
 
       <div className="apartment-card__body">

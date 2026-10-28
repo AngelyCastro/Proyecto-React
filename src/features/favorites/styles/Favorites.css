@@ -1,0 +1,33 @@
+.favorites {
+  padding: 3rem 0 4rem;
+}
+
+.favorites__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-soft);
+}
+
+.favorites__title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.favorites__count {
+  color: var(--color-secondary);
+}
+
+@media (min-width: 768px) {
+  .favorites__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .favorites__title {
+    font-size: 3rem;
+  }
+}
