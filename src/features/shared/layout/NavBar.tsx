@@ -8,6 +8,7 @@ interface NavItem {
   label: string
 }
 
+// Lista de opciones y rutas en la barra de navegación
 const NAV_ITEMS: NavItem[] = [
   { to: "/", label: "Inicio" },
   { to: "/apartamentos", label: "Apartamentos" },
@@ -16,6 +17,7 @@ const NAV_ITEMS: NavItem[] = [
 ]
 
 const NavBar = () => {
+  //estados del menu 
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const toggleMenu = () => setIsOpen((prev) => !prev)
   const closeMenu = () => setIsOpen(false)
@@ -48,6 +50,7 @@ const NavBar = () => {
           className={`navbar__links ${isOpen ? "navbar__links--open" : ""}`}
           aria-label="Navegación principal"
         >
+           {/* Recorre la lista y genera un enlace por cada opción */}
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.to}
