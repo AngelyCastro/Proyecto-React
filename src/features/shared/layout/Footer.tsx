@@ -27,7 +27,7 @@ const Footer = () => {
 
         <nav className="footer__nav" aria-label="Enlaces del pie de página">
           <h3>Explorar</h3>
-          // Recorre la lista FOOTER_LINKS para generar los enlaces
+         
           {FOOTER_LINKS.map((link) => (
             <Link key={link.to} to={link.to}>
               {link.label}
