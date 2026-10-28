@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">amarea</string>
+    <string name="title_activity_main">amarea</string>
+    <string name="package_name">com.amarea.myapp</string>
+    <string name="custom_url_scheme">com.amarea.myapp</string>
+</resources>
