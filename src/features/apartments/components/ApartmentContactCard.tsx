@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import type { Apartment } from "../types/Apartment"
+import FavoriteButton from "../../favorites/components/FavoriteButton"
 interface ApartmentContactCardProps {
   apartment: Apartment
 }
@@ -26,7 +27,7 @@ const ApartmentContactCard = ({ apartment }: ApartmentContactCardProps) => {
         Solicitar visita
       </Link>
 
-      {/*<FavoriteButton apartmentId={apartment.id} apartmentName={apartment.name} showLabel />*/}
+      <FavoriteButton apartmentId={apartment.id} apartmentName={apartment.name} showLabel />
     </div>
   )
 }
