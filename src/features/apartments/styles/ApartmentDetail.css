@@ -1,0 +1,301 @@
+/* =========================================
+   Detalle del apartamento
+   Foto a la izquierda, datos y precio a la derecha,
+   descripción y amenidades en una tarjeta blanca abajo.
+   Móvil primero · tableta 768px · computadora 1024px
+   ========================================= */
+
+/* La página es una cuadrícula. En móvil todo va en una columna */
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "back"
+    "gallery"
+    "eyebrow"
+    "title"
+    "stats"
+    "aside"
+    "desctitle"
+    "desc"
+    "amenities";
+  padding: 1.5rem 0 4rem;
+}
+
+/* display: contents "quita" estas cajas del acomodo:
+   sus hijos se acomodan directamente en la cuadrícula de .detail */
+.detail__layout,
+.detail__main,
+.detail-info {
+  display: contents;
+}
+
+/* Texto oculto a la vista pero que sí leen los lectores de pantalla
+   (la palabra "Área": el dato ya dice "m²") */
+.detail-info__stat:last-child dt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Volver ---------- */
+.detail__back {
+  grid-area: back;
+  justify-self: start;
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+
+.detail__back:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Foto ----------
+   Todas las fotos tienen la misma proporción (4:3).
+   object-fit: cover recorta lo que sobra sin deformar la imagen */
+.detail-gallery {
+  grid-area: gallery;
+  align-self: center;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+}
+
+.detail-gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---------- Datos (columna derecha) ---------- */
+.detail-info > .eyebrow {
+  grid-area: eyebrow;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+}
+
+.detail-info__title {
+  grid-area: title;
+  margin-top: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+/* "4 habitaciones · 4 baños · 320 m²" en una sola línea */
+.detail-info__stats {
+  grid-area: stats;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-soft);
+  color: var(--color-secondary);
+}
+
+/* row-reverse: el número (dd) se ve antes de la palabra (dt) */
+.detail-info__stat {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+}
+
+.detail-info__stat dt {
+  text-transform: lowercase;
+}
+
+/* Punto separador entre cada dato */
+.detail-info__stat + .detail-info__stat::after {
+  content: "·";
+}
+
+/* ---------- Precio y botón ---------- */
+.detail__aside {
+  grid-area: aside;
+  margin-top: 1.25rem;
+}
+
+/* Dos columnas: botón de visita y (después) botón de favoritos */
+.detail-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* "ALQUILER MENSUAL" encima del precio */
+.detail-card__label {
+  grid-column: 1 / -1;
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.detail-card__price {
+  grid-column: 1 / -1;
+  margin-top: -0.75rem;
+  color: var(--color-accent);
+  font-family: var(--font-title);
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.detail-card__period {
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* "¿Te interesa esta propiedad?..." */
+.detail-card__text {
+  grid-column: 1 / -1;
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+}
+
+.detail-card__cta {
+  text-align: center;
+}
+
+/* ---------- Tarjeta blanca de abajo: descripción + amenidades ----------
+   Son piezas separadas que se ven como una sola tarjeta */
+.detail-info .detail-section-title,
+.detail-info__description,
+.detail-amenities {
+  background-color: #ffffff;
+}
+
+/* Títulos "DESCRIPCIÓN" y "AMENIDADES": dorados, pequeños y con línea */
+.detail-section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.detail-section-title::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.detail-info .detail-section-title {
+  grid-area: desctitle;
+  margin-top: 2rem;
+  padding: 1.5rem 1.5rem 0;
+  border-radius: 12px 12px 0 0;
+}
+
+.detail-info__description {
+  grid-area: desc;
+  padding: 0.5rem 1.5rem 1rem;
+}
+
+.detail-amenities {
+  grid-area: amenities;
+  padding: 0 1.5rem 1.5rem;
+  border-radius: 0 0 12px 12px;
+}
+
+.detail-amenities .detail-section-title {
+  margin: 0.5rem 0 0.75rem;
+}
+
+.detail-amenities__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  list-style: none;
+}
+
+.detail-amenities__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background-color: var(--color-light);
+}
+
+/* Rombo dorado como viñeta */
+.detail-amenities__item::before {
+  content: "";
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+  transform: rotate(45deg);
+}
+
+/* ---------- Id que no existe ---------- */
+.detail-missing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.detail-missing h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* ---------- Tableta ---------- */
+@media (min-width: 768px) {
+  .detail-info__title {
+    font-size: 2.75rem;
+  }
+
+  .detail-amenities__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Computadora: foto | datos lado a lado ---------- */
+@media (min-width: 1024px) {
+  /* Las filas "." (1fr) arriba y abajo dejan el mismo espacio
+     a los dos lados: así los datos quedan centrados junto a la foto */
+  .detail {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto auto auto auto 1fr auto auto auto;
+    grid-template-areas:
+      "back      back"
+      "gallery   ."
+      "gallery   eyebrow"
+      "gallery   title"
+      "gallery   stats"
+      "gallery   aside"
+      "gallery   ."
+      "desctitle desctitle"
+      "desc      desc"
+      "amenities amenities";
+    column-gap: 2rem;
+  }
+
+  .detail-info > .eyebrow {
+    margin-top: 0;
+  }
+
+  /* Las amenidades se acomodan solas: 4 por fila si caben */
+  .detail-amenities__list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
