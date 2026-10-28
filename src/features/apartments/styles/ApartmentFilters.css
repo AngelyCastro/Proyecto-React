@@ -1,0 +1,68 @@
+
+.apartment-filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-soft);
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.apartment-filters__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.apartment-filters__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.apartment-filters__select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-soft);
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.apartment-filters__select:focus {
+  border-color: var(--color-accent);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.apartment-filters__reset {
+  align-self: end;
+  background-color: transparent;
+  font-family: var(--font-body);
+}
+
+@media (min-width: 768px) {
+  .apartment-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apartment-filters__search {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Computadora: todo en una fila */
+@media (min-width: 1024px) {
+  .apartment-filters {
+    grid-template-columns: 2fr repeat(3, 1fr) auto;
+    align-items: end;
+  }
+
+  .apartment-filters__search {
+    grid-column: auto;
+  }
+}
