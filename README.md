@@ -1,75 +1,21 @@
-# React + TypeScript + Vite
+Integrantes: Angely Castro, Amanda Bolaños, Valeria Sánchez.
+Nombre del proyecto: AMAREA - Apartamentos de lujo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Descripcion: Aplicación web y móvil para promocionar apartamentos de lujo en Costa Rica. Permite explorar un catálogo de residencias, filtrarlas, ver el detalle de cada una, guardar favoritos y solicitar información o una visita.
 
-Currently, two official plugins are available:
+Tecnologias: React Router, React 19, TypeScript, Vite, Capacitor, Vercel, CSS, Android Studio, Git y GitHub
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Instrucciones de instalacion: 
+Clonar el repositorio: git clone https://github.com/AngelyCastro/Proyecto-React.git
+Entrar a la carpeta del proyecto: cd Proyecto-React
+Instalar las dependencias:  npm install
+Iniciar el servidor de desarrollo: npm run dev
+Abrir en el navegador la dirección que muestra la terminal 
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+Enlace de vercel: https://amarea-cyan.vercel.app/
+Enlace de Git: https://github.com/AngelyCastro/Proyecto-React.git
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
